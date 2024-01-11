@@ -1,8 +1,16 @@
-import useProducts from "../hooks/useProducts";
+import { useParams } from "react-router-dom";
+import useProductsByCategory from "../hooks/useProductsByCategory";
 import ProductItem from "./ProductItem";
 
-const ProductGrid = () => {
-    const { products } = useProducts();
+const ProductCategoryGrid = () => {
+    const { categoryName } = useParams();
+    const { products, isPending } = useProductsByCategory({
+        category: categoryName,
+    });
+
+    if (isPending) {
+        return "loading...";
+    }
 
     return (
         <div className="grid grid-cols-5 gap-4 my-10 h-fit">
@@ -19,4 +27,4 @@ const ProductGrid = () => {
     );
 };
 
-export default ProductGrid;
+export default ProductCategoryGrid;

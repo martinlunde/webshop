@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import WebshopLayout from "./components/layout";
 import ProductDetailsPage from "./pages/ProductDetailsPage.tsx";
+import ProductGrid from "./components/ProductGrid.tsx";
+import ProductCategoryGrid from "./components/ProductCategoryGrid.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +25,18 @@ const router = createBrowserRouter([
                 element: <Navigate replace to={"/products"} />,
             },
             {
-                path: "/products/",
+                path: "/products",
                 element: <ProductsPage />,
+                children: [
+                    {
+                        index: true,
+                        element: <ProductGrid />,
+                    },
+                    {
+                        path: "/products/category/:categoryName",
+                        element: <ProductCategoryGrid />,
+                    },
+                ],
             },
             {
                 path: "/products/:productId",
