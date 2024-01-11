@@ -12,7 +12,7 @@ export type Product = {
 
 export const QueryKeyProducts = "products";
 
-export default function useProducts() {
+const useProducts = () => {
     const productsQuery = useQuery({
         queryFn: () => handleRequest<Product[]>("GET", "/products"),
         queryKey: [QueryKeyProducts],
@@ -23,3 +23,5 @@ export default function useProducts() {
         ...productsQuery
     }
 }
+
+export default useProducts;
