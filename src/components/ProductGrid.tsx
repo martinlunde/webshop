@@ -1,11 +1,9 @@
-import useProducts from "../hooks/useProducts";
+import { Product } from "../hooks/useProducts";
 import ProductItem from "./ProductItem";
 
-const ProductGrid = () => {
-    const { products } = useProducts();
-
+const ProductGrid = ({ products }: { products: Product[] }) => {
     return (
-        <div className="grid grid-cols-5 gap-4 my-10 h-fit">
+        <div className="grid grid-cols-5 gap-4 m-10 h-fit w-fit">
             {products.map((product, index) => (
                 <ProductItem
                     key={product.id + index}

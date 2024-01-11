@@ -12,10 +12,24 @@ export type Product = {
 
 export const QueryKeyProducts = "products";
 
-const useProducts = () => {
+export type UseProductOptions = {
+    category?: string;
+    queryString?: string;
+}
+
+const useProducts = (options?: UseProductOptions) => {
     const productsQuery = useQuery({
         queryFn: () => handleRequest<Product[]>("GET", "/products"),
         queryKey: [QueryKeyProducts],
+        select: (products) => {
+            return products.filter(p =>
+                (!options?.category || p.category === options.category) &&
+                (!options?.queryString ||
+                    (p.title.toLowerCase().includes(options.queryString.toLowerCase()) ||
+                        p.description.toLowerCase().includes(options.queryString.toLowerCase()))
+                )
+            );
+        }
     })
 
     return {
