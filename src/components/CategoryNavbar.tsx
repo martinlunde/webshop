@@ -6,18 +6,20 @@ const CategoryNavbar = () => {
     const { categories } = useCategories();
 
     return (
-        <div className="bg-amber-500 w-40 min-h-screen">
-            {categories.map((category) => (
-                <Link
-                    className={`flex text-white hover:underline ${
-                        categoryName === category ? "underline" : ""
-                    }`}
-                    key={category}
-                    to={`/products/category/${category}`}
-                >
-                    {category}
-                </Link>
-            ))}
+        <div className="bg-neutral-500 min-h-screen min-w-40">
+            <nav className="p-6">
+                {categories.map((category) => (
+                    <Link
+                        className={`flex text-white hover:underline ${
+                            categoryName === category ? "underline" : ""
+                        }`}
+                        key={category}
+                        to={`/products/category/${category}`}
+                    >
+                        {category}
+                    </Link>
+                ))}
+            </nav>
         </div>
     );
 };

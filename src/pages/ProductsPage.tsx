@@ -13,11 +13,13 @@ const ProductsPage = () => {
     });
 
     return (
-        <div className="flex flex-row w-full">
+        <div className="flex w-full">
             <CategoryNavbar />
-            <div className="flex flex-col w-full">
-                <div className="bg-red-500 h-10">
+            <div className="flex flex-col">
+                <div className="px-10 pt-4">
                     <input
+                        className="border border-black rounded px-4 py-2"
+                        placeholder="Search"
                         type="text"
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />

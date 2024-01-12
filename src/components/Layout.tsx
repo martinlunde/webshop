@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
-const WebshopLayout = () => {
+const Layout = () => {
     return (
         <>
             <Header />
@@ -12,4 +12,4 @@ const WebshopLayout = () => {
     );
 };
 
-export default WebshopLayout;
+export default Layout;

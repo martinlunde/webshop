@@ -8,7 +8,7 @@ import {
     RouterProvider,
     createBrowserRouter,
 } from "react-router-dom";
-import WebshopLayout from "./components/layout";
+import Layout from "./components/Layout.tsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.tsx";
 
 const queryClient = new QueryClient();
@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <WebshopLayout />,
+        element: <Layout />,
         children: [
             {
                 index: true,
