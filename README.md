@@ -1,9 +1,12 @@
 # Webshop
 
-Proof of concept website using the following tech:
+Simple proof of concept website using the following tech:
 
 -   React + TypeScript
--   [Tanstack/Query](https://tanstack.com/query/latest)
--   [Vite](https://vitejs.dev/)
+-   [ViteJS](https://vitejs.dev/)
+-   [TanStack Query](https://tanstack.com/query/latest)
 -   [React Router v6](https://reactrouter.com/en/main)
 -   [TailwindCSS](https://tailwindcss.com/)
+
+A live version of the website can be tested by the following url:  
+https://webshop-b97f7.web.app/
