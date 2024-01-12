@@ -10,7 +10,7 @@ export type ProductItemProps = {
 const ProductItem = ({ id, title, price, image }: ProductItemProps) => {
     return (
         <Link
-            className="flex flex-col border rounded p-4"
+            className="flex flex-col border rounded p-4 hover:scale-105 ease-in-out duration-200"
             to={`/products/${id}`}
         >
             <div className="flex self-center justify-center items-center h-32 w-32 md:h-40 md:w-40 rounded-full border overflow-hidden">

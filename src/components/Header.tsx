@@ -18,10 +18,13 @@ const NavLink = ({ title, to }: { title: string; to: string }) => {
 
 const Header = () => {
     return (
-        <header className="flex h-24 bg-green-600">
-            <div className="flex items-center text-5xl text-white px-8 mr-16">
+        <header className="flex h-24 bg-anzac-400">
+            <Link
+                className="flex items-center text-5xl text-white px-8 mr-16"
+                to={"/"}
+            >
                 W
-            </div>
+            </Link>
             <nav className="flex items-center">
                 <NavLink to={"/products"} title="Home" />
             </nav>

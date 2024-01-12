@@ -6,7 +6,7 @@ const CategoryNavbar = () => {
     const { categories } = useCategories();
 
     return (
-        <div className="bg-neutral-500 md:min-h-screen md:min-w-40">
+        <div className="bg-anzac-700 opacity-70 md:min-h-screen md:min-w-40">
             <nav className="p-6">
                 {categories.map((category) => (
                     <Link

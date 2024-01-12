@@ -14,8 +14,12 @@ export type ShoppingCart = {
 const useShoppingCart = () => {
     const queryClient = useQueryClient();
     const shoppingCartQuery = useQuery({
-        queryFn: () => 
-            queryClient.getQueryData<ShoppingCart>([QueryKeyShoppingCart]),
+        queryFn: () => {
+            const emptyCart: ShoppingCart = {
+                products: [],
+            }
+            return queryClient.getQueryData<ShoppingCart>([QueryKeyShoppingCart]) ?? emptyCart;
+        },
         queryKey: [QueryKeyShoppingCart]
     });
 

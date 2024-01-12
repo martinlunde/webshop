@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useProduct from "../hooks/useProduct";
 import Button from "../components/Button";
 import useShoppingCartAddItem from "../hooks/useShoppingCartAddItem";
+import Spinner from "../components/Spinner";
 
 const ProductDetailsPage = () => {
     const { productId } = useParams();
@@ -11,7 +12,22 @@ const ProductDetailsPage = () => {
     const { addItem } = useShoppingCartAddItem();
 
     if (!product && isPending) {
-        return "loading...";
+        return (
+            <div className="flex w-full justify-center mt-24">
+                <Spinner />
+            </div>
+        );
+    }
+
+    function handleAddItem() {
+        addItem(
+            { product: product!, quantity: 1 },
+            {
+                onSuccess: () => {
+                    navigate("/");
+                },
+            }
+        );
     }
 
     return (
@@ -24,10 +40,7 @@ const ProductDetailsPage = () => {
                     <p className="text-xl mt-4">{`${product?.price} kr`}</p>
                     <button
                         className="bg-purple-700 text-white p-2 px-10 mt-4 hover:bg-purple-500 rounded-lg"
-                        disabled={!product}
-                        onClick={() =>
-                            addItem({ product: product!, quantity: 1 })
-                        }
+                        onClick={handleAddItem}
                     >
                         {"Legg i handlekurv"}
                     </button>
