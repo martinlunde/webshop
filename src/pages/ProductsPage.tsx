@@ -16,7 +16,7 @@ const ProductsPage = () => {
         <div className="flex flex-col md:flex-row w-full">
             <CategoryNavbar />
             <div className="flex flex-col">
-                <div className="px-10 pt-4">
+                <div className="px-4 md:px-10 pt-4">
                     <input
                         className="border border-black rounded px-4 py-2"
                         placeholder="Search"

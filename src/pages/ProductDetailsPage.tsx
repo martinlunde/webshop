@@ -15,7 +15,7 @@ const ProductDetailsPage = () => {
     }
 
     return (
-        <div className="mx-20 my-8">
+        <div className="mx-4 md:mx-20 my-8">
             <Button onClick={() => navigate(-1)} title="<- Go Back" />
             <section className="grid grid-cols-1 md:grid-cols-2 mt-8">
                 <div>
