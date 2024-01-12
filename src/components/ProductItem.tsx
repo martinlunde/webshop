@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export type ProductItemProps = {
-    id: number;
+    id: string;
     title: string;
     price: string;
     image: string;

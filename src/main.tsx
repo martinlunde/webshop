@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout.tsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.tsx";
+import ShoppingCartPage from "./pages/ShoppingCartPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: "/products/:productId",
                 element: <ProductDetailsPage />,
+            },
+            {
+                path: "/cart",
+                element: <ShoppingCartPage />,
             },
         ],
     },

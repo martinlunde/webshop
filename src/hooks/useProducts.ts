@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { handleRequest } from "./helper";
 
 export type Product = {
-    id: number;
+    id: string;
     title: string;
     price: string;
     category: string;

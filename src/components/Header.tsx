@@ -1,11 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
+import ShoppingCart from "./ShoppingCart";
 
 const NavLink = ({ title, to }: { title: string; to: string }) => {
     const { pathname } = useLocation();
 
     return (
         <Link
-            className={`text-white ${pathname === to ? "underline" : ""}`}
+            className={`text-white hover:underline ${
+                pathname === to ? "underline" : ""
+            }`}
             to={to}
         >
             {title}
@@ -22,6 +25,9 @@ const Header = () => {
             <nav className="flex items-center">
                 <NavLink to={"/products"} title="Home" />
             </nav>
+            <div className="flex items-center absolute h-24 right-0 px-8">
+                <ShoppingCart />
+            </div>
         </header>
     );
 };
